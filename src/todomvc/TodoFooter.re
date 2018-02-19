@@ -10,8 +10,7 @@ let push = (path, event) => {
   ReasonReact.Router.push("#" ++ path);
 };
 
-let make =
-    (~count, ~completedCount, ~nowShowing, ~onClearCompleted, _children) => {
+let make = (~count, ~completedCount, ~nowShowing, ~onClearCompleted, _children) => {
   ...component,
   render: _self => {
     let activeTodoWord = count === 1 ? "item" : "items";
@@ -29,9 +28,7 @@ let make =
       };
     <footer className="footer">
       <span className="todo-count">
-        <strong>
-          (ReasonReact.stringToElement(string_of_int(count)))
-        </strong>
+        <strong> (ReasonReact.stringToElement(string_of_int(count))) </strong>
         (ReasonReact.stringToElement(" " ++ activeTodoWord ++ " left"))
       </span>
       <ul className="filters">
@@ -55,5 +52,5 @@ let make =
       </ul>
       clearButton
     </footer>;
-  },
+  }
 };
